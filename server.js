@@ -1,7 +1,15 @@
 //// Load most basic dependencies
 // Create require function 
 // https://nodejs.org/docs/latest-v18.x/api/module.html#modulecreaterequirefilename
+// Load express and other dependencies for serving HTML, CSS, and JS files
+// Use CJS __filename and __dirname in ES module scope
+
 import { createRequire } from 'node:module';
+import express from 'express'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import { rps, rpsls } from "./lib/rpsls.js"
+
 const require = createRequire(import.meta.url);
 // The above two lines allow us to use ES methods and CJS methods for loading
 // dependencies.
@@ -37,12 +45,9 @@ It also creates logs in a common log format (CLF) so that you can better.
     `)
     process.exit(0)
 } 
-// Load express and other dependencies for serving HTML, CSS, and JS files
-import express from 'express'
-// Use CJS __filename and __dirname in ES module scope
+
 // https://flaviocopes.com/fix-dirname-not-defined-es-module-scope/
-import path from 'path'
-import { fileURLToPath } from 'url'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 // Load dependencies for logging
@@ -102,3 +107,4 @@ process.on('SIGINT', () => {
         }    
     })
 })
+
