@@ -11,11 +11,6 @@ function play(){
 
     window.location.href = "game.html";
 
-    if (rps.checked){
-        var lizard = document.getElementById("lizard");
-        lizard.style.display = "none";
-
-    }
     const base_url = window.location.href + 'app/';
     const url = base_url + 'rps' + '/play' + '/' + shot;
 }
