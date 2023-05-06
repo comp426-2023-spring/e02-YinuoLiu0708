@@ -2,8 +2,26 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-async function play(){
+var shot;
 
+function play(){
+    var rps = document.getElementById('rps');
+    var rpsls = document.getElementById('rpsls');
+    var opponent = document.getElementById('opponent');
+
+    window.location.href = "game.html";
+
+    if (rps.checked){
+        var lizard = document.getElementById("lizard");
+        lizard.style.display = "none";
+
+    }
+    const base_url = window.location.href + 'app/';
+    const url = base_url + 'rps' + '/play' + '/' + shot;
+}
+
+function choose(choice){
+    shot = choice;
 }
 
 function viewRules(){

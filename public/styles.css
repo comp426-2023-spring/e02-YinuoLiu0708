@@ -26,3 +26,9 @@ button{
     background-color: lightyellow;
     text-align: center;
 }
+
+img{
+    width: 12pc;
+    height: 12pc;
+    border-width: 35px;
+}
