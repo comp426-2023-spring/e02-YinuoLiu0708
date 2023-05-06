@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>Paper Scissor Rock</title>
+        <meta charset="UTF-8">
+        <title>Paper Rock Scissors</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
         <script src="scripts.js"></script>
     </head>
@@ -8,5 +9,28 @@
         <header>
             <h1>Rock Paper Scissor</h1>
         </header>
+        <form id="userinput" action="/submit">
+            <input type="checkbox" id="rps">
+            <label>Play Rock, Paper, Scissors?</label>
+
+            <br><br>
+
+            <input type="checkbox" id="rpsls">
+            <label>Play Rock, Paper, Scissors, Lizard, Spock?</label>
+
+            <br><br>
+        
+            <input type="checkbox" id="opponent">
+            <label>Playing against an opponent?</label>
+        
+            <br><br>
+            
+        </form>
+
+        <button type="button" id="play" onClick="play()">Play game!</button>
+
+        <br><br>
+
+        <button type="button" id="'rules" onClick="viewRules()">View rules</button>
     </body>
 </html>

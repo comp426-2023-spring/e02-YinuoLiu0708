@@ -1,8 +1,28 @@
-body {
+header{
+    background-color: lightblue;
+    text-align: center;
 }
 
-h1 {
+label{
+    font-size: larger;
+    line-height: 30px;
+    text-align: center;
+    
 }
 
-p {
+body{
+    font-size: medium;
+    text-align: center;
+}
+
+p{
+    font-size: large;
+    line-height: 30px;
+    text-align: center;
+}
+
+button{
+    font-size: large;
+    background-color: lightyellow;
+    text-align: center;
 }

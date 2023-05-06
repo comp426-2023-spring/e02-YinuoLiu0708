@@ -2,3 +2,14 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
+async function play(){
+
+}
+
+function viewRules(){
+    window.location.href = "rules.html";
+}
+
+function home(){
+    window.location.href = "index.html";
+}
