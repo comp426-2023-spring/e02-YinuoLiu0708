@@ -3,11 +3,22 @@ header{
     text-align: center;
 }
 
-label{
+form{
+    text-align: center;
+}
+
+.home{
     font-size: larger;
     line-height: 30px;
-    text-align: center;
-    
+}
+
+.rps{
+    display: inline-block;
+    width: 100px;
+    font-size: large;
+    line-height: 30px;
+    text-align: left;
+    margin-right: 10px;
 }
 
 body{

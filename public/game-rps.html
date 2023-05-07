@@ -7,15 +7,27 @@
     </head>
     <body>
         <h2>Pick your shot!</h2>
-        <br><br>
+        <br>
         <button type="button" class="shot" onclick="choose('paper')">Paper</button>
         <br><br>
         <button type="button" class="shot" onclick="choose('rock')">Rock</button>
         <br><br>
         <button type="button" class="shot" onclick="choose('scissors')">Scissors</button>
         <br><br>
-        <br><br><br>
         
+        <form class="rps">
+            <label class="rps">You: </label>
+            <input type="text" id="shot" readonly>
+            <br>
+            <label class="rps">Opponent</label>
+            <input type="text" id="opponent-shot" readonly>
+            <br>
+            <label class="rps">Result: </label>
+            <input type="text" id="result" readonly>
+            <br>
+        </form>
+
+        <br><br>
         <button type="button" class="function" onclick="home()">Reset</button>
     </body>
     
