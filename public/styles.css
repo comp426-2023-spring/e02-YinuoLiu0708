@@ -21,9 +21,15 @@ p{
     text-align: center;
 }
 
-button{
-    font-size: large;
+.function{
+    font-size: larger;
     background-color: lightyellow;
+    text-align: center;
+}
+
+.shot{
+    font-size:large;
+    background-color: aliceblue;
     text-align: center;
 }
 

@@ -2,20 +2,33 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-function play(){
+
+async function play(){
     var rps = document.getElementById('rps');
     var rpsls = document.getElementById('rpsls');
     var opponent = document.getElementById('opponent');
-    
-    const base_url = window.location.href + 'app/';
-    const url;
-
-    window.location.href = "game.html";
+    var game;
 
     if (rps.checked){
-        $('.rpsls').hide();
+        game = 'rps';
+    } else {
+        game = 'rpsls';
     }
-    
+
+    const url = window.location.href + 'app/' + game + '/play'
+
+    if (opponent.checked && rps.checked){
+        window.location.href = "game-rps.html";
+    } 
+
+    if (opponent.checked && rpsls.checked){
+        window.location.href = "game-rpsls.html";
+    }
+
+}
+
+async function choose(shot){
+
 }
 
 function viewRules(){
