@@ -15,7 +15,16 @@ form{
 .rps{
     display: inline-block;
     width: 100px;
-    font-size: large;
+    font-size: 22px;
+    line-height: 30px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.rpsls{
+    display: inline-block;
+    width: 100px;
+    font-size: 22px;
     line-height: 30px;
     text-align: left;
     margin-right: 10px;
@@ -42,10 +51,4 @@ p{
     font-size:large;
     background-color: aliceblue;
     text-align: center;
-}
-
-img{
-    width: 12pc;
-    height: 12pc;
-    border-width: 35px;
 }

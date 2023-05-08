@@ -39,7 +39,16 @@ function rps(shot){
     });
 }
 
+function rpsls(shot){
+    document.getElementById("rpsls-player-shot").value = shot;
 
+    rpslsOpponent(shot).then(someVal => {
+        result = someVal.result;
+        computerShot = someVal.opponent;
+        document.getElementById("rpsls-result").value = result;
+        document.getElementById("rpsls-opponent-shot").value = computerShot;
+    });    
+}
 
 function rpsNoOpponent() {
     const url = "/app/rps"
@@ -63,6 +72,16 @@ function rpslsNoOpponent() {
 
 function rpsOpponent(shot) {
     const url = "/app/rps/play/" + shot
+    return response = fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error(error));
+}
+
+function rpslsOpponent(shot) {
+    const url = "/app/rpsls/play/" + shot
     return response = fetch(url)
         .then(response => response.json())
         .then(data => {
