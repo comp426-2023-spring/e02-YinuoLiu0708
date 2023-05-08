@@ -3,16 +3,15 @@
 // https://github.com/jdmar3/coinserver
 
 var game;
-var baseurl = window.location.href + 'app/';
 
-async function play(){
+function play(){
     var rps = document.getElementById('rps');
     var rpsls = document.getElementById('rpsls');
     var opponent = document.getElementById('opponent');
 
     if (rps.checked){
         game = 'rps';
-    } else {
+    } else if (rpsls.checked){
         game = 'rpsls';
     }
 
@@ -23,21 +22,27 @@ async function play(){
     if (opponent.checked && rpsls.checked){
         window.location.href = "game-rpsls.html";
     }
+
+    if (!opponent.checked && rps.checked){
+        rpsNoOpponent().then(shot => {
+            document.getElementById("no-opponent").value = shot.player;
+        })
+    }
 }
 
-async function choose(shot){
+function choose(shot){
     document.getElementById('shot').value = shot;
 
-    url = baseurl + game + '/play' + '/' + shot;
-    
-    let response = await fetch(url);
-    let data = await response.json();
+}
 
-    opponent_shot = data.opponent;
-    result = data.result;
-
-    document.getElementById('opponent-shot').value = opponent_shot;
-    document.getElementById('result').value = result;
+function rpsNoOpponent() {
+    const url = "/app/rps"
+    return response = fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error(error));
 }
 
 function viewRules(){
