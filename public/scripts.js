@@ -2,18 +2,10 @@
 // check out the coin-server example from a previous COMP 426 semester.
 // https://github.com/jdmar3/coinserver
 
-var game;
-
 function play(){
     var rps = document.getElementById('rps');
     var rpsls = document.getElementById('rpsls');
     var opponent = document.getElementById('opponent');
-
-    if (rps.checked){
-        game = 'rps';
-    } else if (rpsls.checked){
-        game = 'rpsls';
-    }
 
     if (opponent.checked && rps.checked){
         window.location.href = "game-rps.html";
@@ -28,15 +20,49 @@ function play(){
             document.getElementById("no-opponent").value = shot.player;
         })
     }
+
+    if (!opponent.checked && rpsls.checked){
+        rpslsNoOpponent().then(shot => {
+            document.getElementById("no-opponent").value = shot.player;
+        })
+    }
 }
 
-function choose(shot){
-    document.getElementById('shot').value = shot;
+function rps(shot){
+    document.getElementById("player-shot").value = shot;
 
+    rpsOpponent(shot).then(someVal => {
+        result = someVal.result;
+        computerShot = someVal.opponent;
+        document.getElementById("result").value = result;
+        document.getElementById("opponent-shot").value = computerShot;
+    });
 }
+
+
 
 function rpsNoOpponent() {
     const url = "/app/rps"
+    return response = fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error(error));
+}
+
+function rpslsNoOpponent() {
+    const url = "/app/rpsls"
+    return response = fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            return data;
+        })
+        .catch(error => console.error(error));
+}
+
+function rpsOpponent(shot) {
+    const url = "/app/rps/play/" + shot
     return response = fetch(url)
         .then(response => response.json())
         .then(data => {

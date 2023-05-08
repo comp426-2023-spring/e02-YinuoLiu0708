@@ -8,16 +8,16 @@
     <body>
         <h2>Pick your shot!</h2>
         <br>
-        <button type="button" class="shot" onclick="choose('paper')">Paper</button>
+        <button type="button" class="shot" onclick="rps('paper')">Paper</button>
         <br><br>
-        <button type="button" class="shot" onclick="choose('rock')">Rock</button>
+        <button type="button" class="shot" onclick="rps('rock')">Rock</button>
         <br><br>
-        <button type="button" class="shot" onclick="choose('scissors')">Scissors</button>
+        <button type="button" class="shot" onclick="rps('scissors')">Scissors</button>
         <br><br>
         
         <form class="rps">
             <label class="rps">You: </label>
-            <input type="text" id="shot" readonly>
+            <input type="text" id="player-shot" readonly>
             <br>
             <label class="rps">Opponent</label>
             <input type="text" id="opponent-shot" readonly>
@@ -29,8 +29,6 @@
 
         <br><br>
 
-        <button>Play again</button>
-        
         <button type="button" class="function" onclick="home()">Reset</button>
     </body>
     
