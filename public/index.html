@@ -12,27 +12,17 @@
         <form id="userinput" action="/submit">
             <input type="checkbox" name="rps" id="rps">
             <label class="home">Play Rock, Paper, Scissors?</label>
-
             <br><br>
-
             <input type="checkbox" name="rpsls" id="rpsls">
             <label class="home">Play Rock, Paper, Scissors, Lizard, Spock?</label>
-
             <br><br>
-        
             <input type="checkbox" name="opponent" id="opponent">
             <label class="home">Playing against an opponent?</label>
-        
-            <br><br>
-            
+            <br><br><br>
         </form>
-
-        <button type="button" class="function" id="play" onClick="play()">Play game!</button>
-
-        <button type="button" class="function" id="'rules" onClick="viewRules()">View rules</button>
-
-        <br><br><br>
-
+        <button type="button" class="function" id="play" onclick="play()">Play game!</button>
+        <button type="button" class="function" id="'rules" onclick="viewRules()">View rules</button>
+        <br><br>
         <h2>No Opponent Game</h2>
         <form>
             <input type="text" class = "display" id="no-opponent" readonly>
